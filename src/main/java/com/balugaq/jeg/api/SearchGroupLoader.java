@@ -498,7 +498,7 @@ public class SearchGroupLoader {
     }
 
     private static void shareCache(Map<Character, Set<SlimefunItem>> cache, String s) {
-        // 收集所有关联的 SlimefunItem
+        // Recoge todos los asociados SlimefunItem
         Set<SlimefunItem> allItems = new HashSet<>();
         List<Character> foundChars = new ArrayList<>();
 
@@ -510,10 +510,10 @@ public class SearchGroupLoader {
             }
         }
 
-        // 所有字符共享同一个 Set 引用
+        // Todos los personajes comparten lo mismo. Set Cita
         if (foundChars.isEmpty()) return;
         for (char c : foundChars) {
-            cache.put(c, allItems);  // 直接覆盖，共享同一个对象
+            cache.put(c, allItems);  // Anulación directa, compartiendo el mismo objeto
         }
     }
 }

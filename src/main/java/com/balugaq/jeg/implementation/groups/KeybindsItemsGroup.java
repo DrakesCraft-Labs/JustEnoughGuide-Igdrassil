@@ -56,7 +56,7 @@ public class KeybindsItemsGroup extends BaseGroup<KeybindsItemsGroup> {
         final Player player,
         final PlayerProfile playerProfile,
         final SlimefunGuideMode slimefunGuideMode) {
-        ChestMenu menu = new ChestMenu("&6选择你要编辑的按键控制集");
+        ChestMenu menu = new ChestMenu("&6Seleccione el conjunto de controles clave que desea editar");
 
         Format format = Formats.keybinds;
         int pages = (OnClick.keybindSets().size() - 1) / format.getChars(Formats.Char.CONTENT).size() + 1;

@@ -525,7 +525,7 @@ public class RTSListener implements Listener {
                         meta.getPersistentDataContainer()
                             .set(CHEAT_AMOUNT_KEY, PersistentDataType.INTEGER, totalAmount);
                         meta.setDisplayName(ChatColors.color(
-                            ItemStackHelper.getDisplayName(clonedItem) + " &c已拿取物品 x" + totalAmount));
+                            ItemStackHelper.getDisplayName(clonedItem) + " &cArtículo tomado x" + totalAmount));
                         itemStack.setItemMeta(meta);
                     } else {
                         Slimefun.getLocalization().sendMessage(player, "messages.no-permission", true);

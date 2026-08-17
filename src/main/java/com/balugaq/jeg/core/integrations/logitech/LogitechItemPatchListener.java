@@ -102,9 +102,9 @@ public class LogitechItemPatchListener implements ItemPatchListener {
         if (lore == null) {
             lore = new ArrayList<>();
         }
-        if (isMachineStackable) lore.add(ChatColors.color("&a可使用逻辑工艺-堆叠配方机器堆叠"));
-        if (isGeneratorStackable) lore.add(ChatColors.color("&a可使用逻辑工艺-量子发电机超频装置堆叠"));
-        if (isMaterialGeneratorStackable) lore.add(ChatColors.color("&a可使用逻辑工艺-堆叠生成器堆叠"));
+        if (isMachineStackable) lore.add(ChatColors.color("&aTecnología lógica disponible-apilamiento de la máquina de recetas"));
+        if (isGeneratorStackable) lore.add(ChatColors.color("&aTecnología lógica disponible-Pila de dispositivos de overclocking del generador cuántico"));
+        if (isMaterialGeneratorStackable) lore.add(ChatColors.color("&aTecnología lógica disponible-pila del generador de pila"));
 
         meta.setLore(lore);
         tagMeta(meta);

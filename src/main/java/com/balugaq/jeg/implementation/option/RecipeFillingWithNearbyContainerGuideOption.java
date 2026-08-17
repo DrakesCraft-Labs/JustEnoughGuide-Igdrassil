@@ -78,12 +78,12 @@ public class RecipeFillingWithNearbyContainerGuideOption implements PrioritySlim
 
         ItemStack item = Converter.getItem(
             Material.ENDER_CHEST,
-            "&a配方补全自动抓取",
-            "&7配方补全自动抓取，即在配方补全获取材料时",
-            "&7从周围的粘液容器中获取原材料",
-            "&e仅支持粘液容器",
-            "&7当前半径范围: " + value + " (限制范围: 0~" + MAX_REACH_LENGTH + ")",
-            "&7\u21E8 &e点击设置配方补全自动抓取范围"
+            "&aFinalización de recetas y recuperación automática",
+            "&7La finalización de la receta se captura automáticamente, es decir, cuando se obtienen materiales durante la finalización de la receta.",
+            "&7Obtenga materias primas de los contenedores de limo circundantes.",
+            "&eSolo admite contenedores de limo",
+            "&7Radio actual: " + value + " (rango límite: 0~" + MAX_REACH_LENGTH + ")",
+            "&7\u21E8 &eHaga clic para configurar el rango de rastreo automático de finalización de recetas"
         );
         return Optional.of(item);
     }
@@ -91,20 +91,20 @@ public class RecipeFillingWithNearbyContainerGuideOption implements PrioritySlim
     @Override
     public void onClick(Player p, ItemStack guide) {
         p.closeInventory();
-        p.sendMessage(ChatColors.color("&a请输入配方补全自动抓取范围"));
+        p.sendMessage(ChatColors.color("&aIngrese la receta para completar el rango de rastreo automático"));
         ChatInput.waitForPlayer(
             JustEnoughGuide.getInstance(), p, s -> {
                 try {
                     int value = Calculator.calculate(s).intValue();
                     if (value < 0 || value > MAX_REACH_LENGTH) {
-                        p.sendMessage("请输入 0 ~ " + MAX_REACH_LENGTH + " 之间的正整数");
+                        p.sendMessage("Por favor ingresa 0 ~ " + MAX_REACH_LENGTH + " entero positivo entre");
                         return;
                     }
 
                     setSelectedOption(p, guide, value);
                     JEGGuideSettings.openSettings(p, guide);
                 } catch (NumberFormatException ignored) {
-                    p.sendMessage("请输入 0 ~ " + MAX_REACH_LENGTH + " 之间的正整数");
+                    p.sendMessage("Por favor ingresa 0 ~ " + MAX_REACH_LENGTH + " entero positivo entre");
                 }
             }
         );

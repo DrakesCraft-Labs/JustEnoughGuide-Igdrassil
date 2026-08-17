@@ -67,7 +67,7 @@ public class GuideListener implements Listener {
     @Internal
     public static void openGuide(Player player, SlimefunGuideMode mode) {
         if (!player.isOp() && !Slimefun.getWorldSettingsService().isWorldEnabled(player.getWorld())) {
-            player.sendMessage(ChatColors.color("&c你没有权限打开粘液科技指南书"));
+            player.sendMessage(ChatColors.color("&cNo tienes permiso para abrir la guía de tecnología de slime."));
             return;
         }
 

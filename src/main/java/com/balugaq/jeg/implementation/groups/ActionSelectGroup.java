@@ -66,7 +66,7 @@ public class ActionSelectGroup extends BaseGroup<ActionSelectGroup> {
         final Player player,
         final PlayerProfile playerProfile,
         final SlimefunGuideMode slimefunGuideMode) {
-        ChestMenu menu = new ChestMenu("&6点击选择切换的按键");
+        ChestMenu menu = new ChestMenu("&6Haga clic en el botón para seleccionar el interruptor");
 
         Format format = Formats.actionSelect;
         int pages = (actions.size() - 1) / format.getChars(Formats.Char.CONTENT).size() + 1;
@@ -90,7 +90,7 @@ public class ActionSelectGroup extends BaseGroup<ActionSelectGroup> {
                 )).ifSuccess(() -> {
                     BaseAction.redirect(pl, act.parent(), keybind, act);
                     pl.closeInventory();
-                    pl.sendMessage(ChatColors.color("&a已设置 " + keybind.name() + " -> " + act.name()));
+                    pl.sendMessage(ChatColors.color("&aYa configurado " + keybind.name() + " -> " + act.name()));
                     GuideUtil.removeLastEntry(playerProfile.getGuideHistory());
                     playerProfile.getGuideHistory().openLastEntry(GuideUtil.getGuide(pl, slimefunGuideMode));
                     return false;

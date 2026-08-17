@@ -1,5 +1,5 @@
-name: 其它问题
-description: 其它问题
+name: Otras preguntas
+description: Otras preguntas
 labels: [ "need tag" ]
 assignees:
   - balugaq
@@ -7,24 +7,24 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 欢迎来到 JustEnoughGuide 的问题追踪器
+        ## bienvenido a JustEnoughGuide rastreador de problemas
         
-        <strong><i>你必须填写标注为星号（*）的表单项</i></strong>
+        <strong><i>Debes rellenar los campos marcados con un asterisco（*）elemento de formulario</i></strong>
 
   - type: checkboxes
     id: checklist
     attributes:
-      label: 检查项目
-      description: 在汇报之前，你需要确认
+      label: comprobar artículos
+      description: Antes de informar, debe confirmar
       options:
-        - label: 你已经寻找过[已知问题列表](https://github.com/balugaq/JustEnoughGuide/issues)，且没有找到相同的建议
+        - label: ya has buscado[Lista de problemas conocidos](https://github.com/balugaq/JustEnoughGuide/issues)，y no se encontraron sugerencias similares
           required: true
 
   - type: textarea
     id: suggestion
     attributes:
-      label: 问题描述
+      label: Descripción del problema
       description: |
-        详细描述你的问题
+        Describe tu problema detalladamente
     validations:
       required: true

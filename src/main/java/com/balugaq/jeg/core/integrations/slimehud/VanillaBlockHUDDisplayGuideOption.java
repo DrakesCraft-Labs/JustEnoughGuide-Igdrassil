@@ -72,13 +72,13 @@ public class VanillaBlockHUDDisplayGuideOption implements PrioritySlimefunGuideO
         boolean enabled = getSelectedOption(p, guide).orElse(false);
         ItemStack item = Converter.getItem(
             isEnabled(p) ? Material.GRASS_BLOCK : Material.DIRT,
-            "&b原版方块HUD显示: &" + (enabled ? "a启用" : "4禁用"),
+            "&bbloque de vainillaHUDespectáculo: &" + (enabled ? "apermitir" : "4Desactivar"),
             "",
-            "&7你现在可以选择是否",
-            "&7在使用SlimeHUD显示方块信息时",
-            "&7允许显示原版方块的信息",
+            "&7Ahora puedes elegir si",
+            "&7en usoSlimeHUDAl mostrar información del bloque",
+            "&7Permite mostrar información del bloque básico.",
             "",
-            "&7\u21E8 &e点击 " + (enabled ? "禁用" : "启用") + " 原版方块HUD显示"
+            "&7\u21E8 &eHacer clic " + (enabled ? "Desactivar" : "permitir") + " bloque de vainillaHUDespectáculo"
         );
         return Optional.of(item);
     }

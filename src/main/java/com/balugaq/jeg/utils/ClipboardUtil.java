@@ -56,7 +56,7 @@ public class ClipboardUtil {
     public static Component makeComponentPaper(Component display, String text) {
         return makeComponentPaper(
             display,
-            Component.text().color(NamedTextColor.YELLOW).append(Component.text("点击复制")).build(),
+            Component.text().color(NamedTextColor.YELLOW).append(Component.text("Haga clic para copiar")).build(),
             text);
     }
 

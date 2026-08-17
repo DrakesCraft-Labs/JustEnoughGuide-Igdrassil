@@ -83,7 +83,7 @@ public class ShareCommand implements JEGCommand {
                 item = player.getInventory().getItemInOffHand();
             }
             if (item == null || item.getType().isAir()) {
-                player.sendMessage(ChatColors.color("&c请将物品放在手上"));
+                player.sendMessage(ChatColors.color("&cPor favor mantenga los artículos a mano"));
                 return;
             }
             OnClick.share(player, ItemStackHelper.getDisplayName(item).trim());

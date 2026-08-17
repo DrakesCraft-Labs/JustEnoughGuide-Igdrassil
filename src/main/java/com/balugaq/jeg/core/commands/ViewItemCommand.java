@@ -81,7 +81,7 @@ public class ViewItemCommand implements JEGCommand {
                 String id = args[1];
                 SlimefunItem slimefunItem = SlimefunItem.getById(id.toUpperCase(Locale.ROOT));
                 if (slimefunItem == null || (!player.isOp() && slimefunItem.isDisabledIn(player.getWorld()))) {
-                    player.sendMessage(ChatColors.color("&c无法查看 ID 为 " + id + "物品"));
+                    player.sendMessage(ChatColors.color("&cNo se puede ver ID para " + id + "cosa"));
                     return;
                 }
                 PlayerProfile profile = PlayerProfile.find(player).orElse(null);

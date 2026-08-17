@@ -72,16 +72,16 @@ public class FinalTechValueDisplayGuideOption implements PrioritySlimefunGuideOp
         boolean enabled = getSelectedOption(p, guide).orElse(true);
         ItemStack item = Converter.getItem(
             isEnabled(p) ? Material.RESPAWN_ANCHOR : Material.REDSTONE_LAMP,
-            "&b旧乱序EMC值显示: &" + (enabled ? "a启用" : "4禁用"),
+            "&bviejo desordenEMCvisualización de valor: &" + (enabled ? "apermitir" : "4Desactivar"),
             "",
-            "&7你现在可以选择是否",
-            "&7在查阅一个新物品的时候",
-            "&7显示它的旧乱序EMC数值",
+            "&7Ahora puedes elegir si",
+            "&7Al buscar un artículo nuevo",
+            "&7muestra que es viejo shuffleEMCvalor numérico",
             "",
-            "&7注: 此EMC数值为",
-            "&7旧乱序中的数值",
-            "&7不等同于新乱序, EMCTech等附属的数值",
-            "&7\u21E8 &e点击 " + (enabled ? "禁用" : "启用") + " 旧乱序EMC值显示"
+            "&7Nota: esteEMCEl valor es",
+            "&7Valores en orden aleatorio antiguo",
+            "&7No es equivalente a un nuevo trastorno., EMCTechy otros valores adjuntos",
+            "&7\u21E8 &eHacer clic " + (enabled ? "Desactivar" : "permitir") + " viejo desordenEMCvisualización de valor"
         );
         return Optional.of(item);
     }

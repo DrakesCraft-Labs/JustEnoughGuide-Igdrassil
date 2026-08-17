@@ -1,11 +1,11 @@
-# 物品定义详见 https://rsc.hiworldmc.com/#/format/universal-item-format
-# 字符: # 长度限 1
+# Para definiciones de elementos, consulte https://rsc.hiworldmc.com/#/format/universal-item-format
+# personaje: # límite de longitud 1
 #   material_type: # mc (mc/slimefun/none/skull_hash/skull_base64/skull_url)
 #   material: grass # (material/skull(hash/base64/url))
-#   name: "&a测试icon"
+#   name: "&apruebaicon"
 #   lore:
-#     - "第一行"
-#     - "第114514行"
+#     - "primera linea"
+#     - "No.114514DE ACUERDO"
 #   modelId: 0 # (CustomModelId)
 #   glow: true/false
 #   color: "0.255.0"

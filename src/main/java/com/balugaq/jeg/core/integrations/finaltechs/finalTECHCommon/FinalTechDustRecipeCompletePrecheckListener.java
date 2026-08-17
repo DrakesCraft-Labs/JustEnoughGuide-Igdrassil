@@ -61,7 +61,7 @@ public class FinalTechDustRecipeCompletePrecheckListener implements Listener {
             var existing = menu.getItemInSlot(slot);
             if (existing != null && existing.getType() != Material.AIR) {
                 event.setCancelled(true);
-                event.setCancelReason("&c输入槽中有物品");
+                event.setCancelReason("&cHay elementos en la ranura de entrada.");
                 return;
             }
         }

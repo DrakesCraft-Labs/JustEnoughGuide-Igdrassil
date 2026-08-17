@@ -82,8 +82,8 @@ public class JustEnoughGuideIntegrationMain implements Integration {
         try {
             ItemStack easterEgg = new CustomItemStack(
                 Material.GLOWSTONE_DUST,
-                "&6&l彩蛋",
-                "&6&l爱来自 JustEnoughGuide"
+                "&6&lhuevos de pascua",
+                "&6&lel amor viene de JustEnoughGuide"
             );
             if (SlimefunItems.ELECTRIC_INGOT_FACTORY_2.getItem() instanceof AContainer ac) {
                 ac.registerRecipe(114514, easterEgg, easterEgg);
@@ -97,7 +97,7 @@ public class JustEnoughGuideIntegrationMain implements Integration {
             }
         }
 
-        Debug.log("正在加载指南选项...");
+        Debug.log("Opciones de guía de carga...");
         JEGGuideSettings.patchSlimefun();
         if (JustEnoughGuide.getConfigManager().isSlimefunIdDisplay()) {
             JEGGuideSettings.addOption(SlimefunIdDisplayGuideOption.instance());
@@ -114,10 +114,10 @@ public class JustEnoughGuideIntegrationMain implements Integration {
         JEGGuideSettings.addOption(RecipeFillingWithNearbyContainerGuideOption.instance());
         JEGGuideSettings.addOption(RecipeCompleteOpenModeGuideOption.instance());
         JEGGuideSettings.addOption(OpenBigRecipeMenuWhenPossibleGuideOption.instance());
-        Debug.log("指南选项加载完毕！");
+        Debug.log("Opciones de guía cargadas！");
 
         if (JustEnoughGuide.getConfigManager().isAutoAddRecipeCompleteButton()) {
-            Debug.log("正在自动添加 JustEnoughGuide 配方补全按钮");
+            Debug.log("Agregando automáticamente JustEnoughGuide Botón para completar recetas");
             Debug.debug("Added RecipeComplete Buttons at: ");
             int count = 0;
             for (var entry : new HashMap<>(Slimefun.getRegistry().getMenuPresets()).entrySet()) {
@@ -138,7 +138,7 @@ public class JustEnoughGuideIntegrationMain implements Integration {
 
                 count++;
             }
-            Debug.log("已为 " + count + " 个机器添加配方补全按钮");
+            Debug.log("ya por " + count + " Las máquinas agregan botones para completar recetas");
         }
     }
 

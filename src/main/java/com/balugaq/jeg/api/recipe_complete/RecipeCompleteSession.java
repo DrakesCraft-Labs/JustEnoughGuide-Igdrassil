@@ -100,7 +100,7 @@ public class RecipeCompleteSession {
         Bukkit.getPluginManager().callEvent(event);
         if (event.isCancelled()) {
             String reason = event.getCancelReason();
-            session.player.sendMessage(ChatColors.color("&c[配方补全] 此次配方补全被取消，原因：" + (reason == null ? "未知" : reason)));
+            session.player.sendMessage(ChatColors.color("&c[Finalización de recetas] La finalización de esta receta ha sido cancelada debido al motivo：" + (reason == null ? "desconocido" : reason)));
             return null;
         }
         SESSIONS.put(session.getPlayer(), session);
@@ -159,7 +159,7 @@ public class RecipeCompleteSession {
             String reason = event.getCancelReason();
             Debug.debug(session + " cannot start for the reason: " + reason);
             cancel(session);
-            session.player.sendMessage(ChatColors.color("&c[配方补全] 此次配方补全被取消，原因：" + (reason == null ? "未知" : reason)));
+            session.player.sendMessage(ChatColors.color("&c[Finalización de recetas] La finalización de esta receta ha sido cancelada debido al motivo：" + (reason == null ? "desconocido" : reason)));
         }
         return !event.isCancelled() && !session.isExpired();
     }

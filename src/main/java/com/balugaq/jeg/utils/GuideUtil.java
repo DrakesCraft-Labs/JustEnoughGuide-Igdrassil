@@ -112,17 +112,17 @@ public class GuideUtil {
     private static final ItemStack BOOK_MARK_MENU_BUTTON =
         Converter.getItem(new SlimefunItemStack(
             "JEG_BOOK_MARK_BUTTON",
-            Material.NETHER_STAR, "&e&l收藏物列表"
+            Material.NETHER_STAR, "&e&lLista de colección"
         ));
     private static final ItemStack ITEM_MARK_MENU_BUTTON =
         Converter.getItem(new SlimefunItemStack(
             "JEG_ITEM_MARK_BUTTON",
-            Material.WRITABLE_BOOK, "&e&l收藏物品"
+            Material.WRITABLE_BOOK, "&e&lartículos de colección"
         ));
     private static final ItemStack CER_MENU_BUTTON =
         Converter.getItem(new SlimefunItemStack(
             "JEG_CER_BUTTON", Material.EMERALD,
-            "&e&l性价比界面（仅供参考）"
+            "&e&lInterfaz rentable (solo como referencia)）"
         ));
     private static boolean rtsLoad = false;
 
@@ -211,12 +211,12 @@ public class GuideUtil {
                 } else {
                     maxVersion = MinecraftVersion.UNKNOWN;
                 }
-                pl.sendMessage(ChatColors.color("&c实时搜索在当前服务器版本 " + MinecraftVersion.current().humanize() + " 无法使用，实时搜索支持库最高支持版本为 " + maxVersion.humanize()));
+                pl.sendMessage(ChatColors.color("&cBúsqueda en vivo en la versión actual del servidor " + MinecraftVersion.current().humanize() + " No se puede usar, la versión más alta admitida de la biblioteca de soporte de búsqueda en tiempo real es " + maxVersion.humanize()));
                 return false;
             }
         } catch (Exception e) {
             Debug.trace(e);
-            pl.sendMessage(ChatColors.color("&c无法检查实时搜索，相关功能已禁用"));
+            pl.sendMessage(ChatColors.color("&cNo se puede verificar la búsqueda en vivo, la funcionalidad relacionada está deshabilitada"));
             return false;
         }
 
@@ -326,7 +326,7 @@ public class GuideUtil {
                 null
             );
         } catch (Exception ignored) {
-            pl.sendMessage(ChatColor.RED + "不兼容的版本! 无法使用实时搜索");
+            pl.sendMessage(ChatColor.RED + "Versión incompatible! No se puede utilizar la búsqueda en vivo");
         }
     }
 
@@ -603,7 +603,7 @@ public class GuideUtil {
     public static ItemStack getLeftActionIcon(BaseAction action) {
         return Converter.getItem(
             action.material(),
-            ChatColors.color("&7按下 " + action.getKey().getKey() + " 时 (" + action.name() + ")")
+            ChatColors.color("&7prensa " + action.getKey().getKey() + " hora (" + action.name() + ")")
         );
     }
 
@@ -891,8 +891,8 @@ public class GuideUtil {
             backIcon = ChestMenuUtils.getBackButton(
                 player,
                 "",
-                "&f左键: &7返回上一页",
-                "&fShift + 左键: &7返回主菜单"
+                "&fclic izquierdo: &7Volver a la página anterior",
+                "&fShift + clic izquierdo: &7Volver al menú principal"
             );
         }
         for (int ss : slots) {
@@ -982,7 +982,7 @@ public class GuideUtil {
             menu.addItem(s, PatchScope.Settings.patch(profile, ChestMenuUtils.getMenuButton(player)));
             menu.addMenuClickHandler(s, (pl, slot, item, action) -> EventUtil.callEvent(new GuideEvents.SettingsButtonClickEvent(pl, item, slot, action, menu, getLastGuide(pl))).ifSuccess(() -> {
                 if (GroupResorter.isSelecting(pl)) {
-                    pl.sendMessage(ChatColors.color("&c当前模式下不能打开设置界面!"));
+                    pl.sendMessage(ChatColors.color("&cLa interfaz de configuración no se puede abrir en el modo actual!"));
                     return false;
                 }
 

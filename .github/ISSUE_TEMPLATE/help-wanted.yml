@@ -1,5 +1,5 @@
-name: 请求帮助
-description: 请求帮助
+name: pide ayuda
+description: pide ayuda
 labels: [ "help wanted" ]
 assignees:
   - balugaq
@@ -7,53 +7,53 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 欢迎来到 JustEnoughGuide 的问题追踪器
-        你正在请求帮助以解决 JustEnoughGuide 的问题。
+        ## bienvenido a JustEnoughGuide rastreador de problemas
+        Estás solicitando ayuda para resolver JustEnoughGuide pregunta。
 
-        <strong><i>你必须填写标注为星号（*）的表单项</i></strong>
+        <strong><i>Debes rellenar los campos marcados con un asterisco（*）elemento de formulario</i></strong>
 
   - type: checkboxes
     id: checklist
     attributes:
-      label: 检查项目
-      description: 在汇报之前，你需要确认
+      label: comprobar artículos
+      description: Antes de informar, debe confirmar
       options:
-        - label: 你已经寻找过[已知问题列表](https://github.com/balugaq/JustEnoughGuide/issues)，且没有找到相同的问题
+        - label: ya has buscado[Lista de problemas conocidos](https://github.com/balugaq/JustEnoughGuide/issues)，y no se encontraron problemas similares
           required: true
 
   - type: textarea
     id: description
     attributes:
-      label: 问题描述
+      label: Descripción del problema
       description: |
-        详细描述你要汇报的问题
-        提供详细的信息能让我们更快地处理问题
-      placeholder: 只说"不能用"没法让开发者定位问题。
+        Describe detalladamente el problema que deseas reportar.
+        Proporcionar información detallada nos permite resolver problemas más rápido
+      placeholder: solo di"El ____ no funciona"Los desarrolladores no tienen forma de localizar el problema.。
     validations:
       required: true
 
   - type: input
     id: minecraft-version
     attributes:
-      label: Minecraft 版本
-      description: 请填写你的 Minecraft 版本
+      label: Minecraft Versión
+      description: Por favor complete su Minecraft Versión
     validations:
       required: true
 
   - type: textarea
     id: slimefun-version
     attributes:
-      label: Slimefun版本
+      label: SlimefunVersión
       description: |
-        请填写Slimefun版本
-        (例如 v4.9-canary-08120db)
-        如果你有管理员权限，建议运行`/sf versions`指令，截图并在此上传指令输出的**所有内容**。
+        Por favor completeSlimefunVersión
+        (Por ejemplo v4.9-canary-08120db)
+        Si tiene derechos de administrador, se recomienda ejecutar`/sf versions`comando, captura de pantalla y cargue el resultado del comando aquí**Todo el contenido**。
     validations:
       required: true
 
   - type: input
     id: version-plugin
     attributes:
-      label: 插件版本
+      label: Versión del complemento
       description: |
-        请填写插件版本
+        Por favor complete la versión del complemento

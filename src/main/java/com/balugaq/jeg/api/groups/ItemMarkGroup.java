@@ -81,7 +81,7 @@ public class ItemMarkGroup extends BaseGroup<ItemMarkGroup> {
         final Player player,
         final PlayerProfile playerProfile,
         final SlimefunGuideMode slimefunGuideMode) {
-        ChestMenu chestMenu = new ChestMenu("添加收藏物 - JEG");
+        ChestMenu chestMenu = new ChestMenu("agregar favoritos - JEG");
 
         Format format = Formats.sub;
         OnClick.preset(chestMenu);

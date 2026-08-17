@@ -67,13 +67,13 @@ public class MachineStackableDisplayGuideOption implements PrioritySlimefunGuide
         boolean enabled = getSelectedOption(p, guide).orElse(true);
         ItemStack item = Converter.getItem(
             isEnabled(p) ? Material.BLAST_FURNACE : Material.FURNACE,
-            "&b逻辑工艺-堆叠显示: &" + (enabled ? "a启用" : "4禁用"),
+            "&bnave lógica-pantalla apilada: &" + (enabled ? "apermitir" : "4Desactivar"),
             "",
-            "&7你现在可以选择是否",
-            "&7在查阅一个物品的时候",
-            "&7显示它是否能被逻辑工艺的堆叠机器堆叠",
+            "&7Ahora puedes elegir si",
+            "&7Al buscar un artículo",
+            "&7Muestra si se puede apilar con la máquina apiladora de Logiccraft.",
             "",
-            "&7\u21E8 &e点击 " + (enabled ? "禁用" : "启用") + " 逻辑工艺-堆叠显示"
+            "&7\u21E8 &eHacer clic " + (enabled ? "Desactivar" : "permitir") + " nave lógica-pantalla apilada"
         );
         return Optional.of(item);
     }

@@ -51,9 +51,9 @@ public class RecipeCompleteOpenModeGuideOption extends AbstractBooleanGuideOptio
     public ItemStack getDisplayItem(Player p, ItemStack guide, boolean enabled) {
         return Converter.getItem(
             isEnabled(p) ? Material.ENCHANTED_BOOK : Material.KNOWLEDGE_BOOK,
-            "&b配方补全打开模式: &" + (enabled ? "4继承上一次打开的界面" : "a打开新界面"),
+            "&bModo abierto de finalización de recetas: &" + (enabled ? "4Heredar la última interfaz abierta" : "aAbrir nueva interfaz"),
             "",
-            "&7\u21E8 &e点击切换配方补全打开模式为 " + (enabled ? "打开新界面" : "继承上一次打开的界面")
+            "&7\u21E8 &eHaga clic para cambiar el modo de apertura de finalización de recetas a " + (enabled ? "Abrir nueva interfaz" : "Heredar la última interfaz abierta")
         );
     }
 

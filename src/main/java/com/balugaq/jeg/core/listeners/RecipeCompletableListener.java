@@ -140,19 +140,19 @@ public class RecipeCompletableListener implements ItemPatchListener {
                         ItemStack itemStack = entry.getKey();
                         String amountString = getAmountString(entry, itemStack);
                         if (PaperLib.isPaper()) {
-                            var builder = Component.text().color(NamedTextColor.RED).append(Component.text("缺少 "));
+                            var builder = Component.text().color(NamedTextColor.RED).append(Component.text("Falta "));
                             var itemBuilder = Component.text(ItemStackHelper.getDisplayName(itemStack));
                             SlimefunItem sf = SlimefunItem.getByItem(itemStack);
                             if (sf != null) {
                                 itemBuilder = itemBuilder
-                                    .hoverEvent(HoverEvent.showText(Component.text().color(NamedTextColor.YELLOW).append(Component.text("点击查看"))))
+                                    .hoverEvent(HoverEvent.showText(Component.text().color(NamedTextColor.YELLOW).append(Component.text("Haga clic para ver"))))
                                     .clickEvent(ClickEvent.runCommand("/jeg viewitem " + sf.getId()));
                             }
                             builder.color(NamedTextColor.GRAY).append(itemBuilder);
                             builder.append(Component.text().color(NamedTextColor.GREEN).append(Component.text(" x")).append(Component.text(amountString)));
                             player.sendMessage(builder);
                         } else {
-                            player.sendMessage(ChatColors.color("&c缺少 &7" + ItemStackHelper.getDisplayName(itemStack) + " &r&ax&7" + amountString));
+                            player.sendMessage(ChatColors.color("&cFalta &7" + ItemStackHelper.getDisplayName(itemStack) + " &r&ax&7" + amountString));
                         }
                     }
                 }
@@ -166,9 +166,9 @@ public class RecipeCompletableListener implements ItemPatchListener {
         int left = amount - stacks * Math.max(1, itemStack.getMaxStackSize());
         String amountString = "" + amount;
         if (amount > itemStack.getMaxStackSize()) {
-            amountString += " ( " + stacks + " 组";
+            amountString += " ( " + stacks + " Grupo";
             if (left > 0) {
-                amountString += " + " + left + " 个";
+                amountString += " + " + left + " individual";
             }
             amountString += ")";
         }
@@ -414,7 +414,7 @@ public class RecipeCompletableListener implements ItemPatchListener {
 
                 String itemName = ItemStackHelper.getDisplayName(clickedItemStack);
                 lore.add("");
-                lore.add(ChatColors.color("&6上次补全物品: " + itemName));
+                lore.add(ChatColors.color("&6Último artículo completado: " + itemName));
 
                 if (!applied) {
                     meta.getPersistentDataContainer().set(LAST_RECIPE_COMPLETE_KEY, PersistentDataType.BOOLEAN, true);
@@ -638,7 +638,7 @@ public class RecipeCompletableListener implements ItemPatchListener {
 
             // Patch start
             old.setType(Material.RED_STAINED_GLASS_PANE);
-            lore.add(ChatColors.color("&a你正在进行配方补全，如果是误触进入，请点击这里"));
+            lore.add(ChatColors.color("&aEstás completando la receta. Si ingresa por error, haga clic aquí."));
             meta.getPersistentDataContainer().set(RECIPE_COMPLETE_EXIT_KEY, PersistentDataType.BOOLEAN, true);
             // Patch end
 

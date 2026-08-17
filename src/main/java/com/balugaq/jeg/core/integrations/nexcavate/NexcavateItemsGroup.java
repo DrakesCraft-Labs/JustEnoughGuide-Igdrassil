@@ -78,7 +78,7 @@ public class NexcavateItemsGroup extends BaseGroup<NexcavateItemsGroup> {
         final Player player,
         final PlayerProfile playerProfile,
         final SlimefunGuideMode slimefunGuideMode) {
-        ChestMenu chestMenu = new ChestMenu("文明复兴物品");
+        ChestMenu chestMenu = new ChestMenu("Artículos de renacimiento de la civilización");
 
         Format format = Formats.sub;
         List<Integer> contentSlots = format.getChars(Formats.Char.CONTENT);

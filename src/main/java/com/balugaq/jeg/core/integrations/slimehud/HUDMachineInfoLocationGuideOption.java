@@ -73,13 +73,13 @@ public class HUDMachineInfoLocationGuideOption implements PrioritySlimefunGuideO
         boolean actionbar = current == HUDLocation.ACTION_BAR;
         ItemStack item = Converter.getItem(
             bossbar ? Material.GLOW_ITEM_FRAME : actionbar ? Material.ITEM_FRAME : Material.ACACIA_BOAT,
-            "&bHUD显示机器信息位置: &" + (bossbar ? "aBoss栏" : actionbar ? "b动作栏" : "e默认设置"),
+            "&bHUDMostrar la ubicación de la información de la máquina: &" + (bossbar ? "aBosscolumna" : actionbar ? "bbarra de acción" : "eConfiguración predeterminada"),
             "",
-            "&7你现在可以自主选择是否",
-            "&7在使用SlimeHUD显示机器信息时",
-            "&7将机器信息显示在Boss栏或动作栏",
+            "&7Ahora puedes elegir si deseas",
+            "&7en usoSlimeHUDAl mostrar información de la máquina",
+            "&7Mostrar información de la máquina enBossbarra o barra de acción",
             "",
-            "&7\u21E8 &e点击切换为使用 " + (bossbar ? "动作栏" : actionbar ? "默认设置" : "Boss栏") + " 显示机器信息"
+            "&7\u21E8 &eHaga clic para cambiar y usar " + (bossbar ? "barra de acción" : actionbar ? "Configuración predeterminada" : "Bosscolumna") + " Mostrar información de la máquina"
         );
         return Optional.of(item);
     }

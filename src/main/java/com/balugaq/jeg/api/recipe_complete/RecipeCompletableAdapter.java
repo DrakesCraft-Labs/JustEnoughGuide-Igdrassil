@@ -67,12 +67,12 @@ public interface RecipeCompletableAdapter {
         blockMenu.replaceExistingItem(slot, Converter.getItem(Models.JEG_RECIPE_COMPLETE_BUTTON));
         blockMenu.addMenuClickHandler(slot, (player, slot1, item, action) -> {
             if (!Bukkit.getPluginManager().isPluginEnabled("JustEnoughGuide")) {
-                player.sendMessage(ChatColors.color("&cJustEnoughGuide 附属已被禁用，配方补全功能无法使用"));
+                player.sendMessage(ChatColors.color("&cJustEnoughGuide El archivo adjunto se ha desactivado y la función de finalización de recetas no se puede utilizar"));
                 return false;
             }
 
             if (!player.isOp() && !Slimefun.getWorldSettingsService().isWorldEnabled(player.getWorld())) {
-                player.sendMessage(ChatColors.color("&c你没有权限打开粘液科技指南书"));
+                player.sendMessage(ChatColors.color("&cNo tienes permiso para abrir la guía de tecnología de slime."));
                 return false;
             }
 

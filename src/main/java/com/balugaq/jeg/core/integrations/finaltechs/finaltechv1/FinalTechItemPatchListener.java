@@ -150,8 +150,8 @@ public class FinalTechItemPatchListener implements ItemPatchListener {
             lore = new ArrayList<>();
         }
 
-        lore.add(ChatColors.color("&7旧乱序输入EMC: &6" + inputEmc));
-        lore.add(ChatColors.color("&7旧乱序输出EMC: &6" + outputEmc));
+        lore.add(ChatColors.color("&7antigua entrada fuera de servicioEMC: &6" + inputEmc));
+        lore.add(ChatColors.color("&7Salida antigua fuera de servicioEMC: &6" + outputEmc));
         meta.setLore(lore);
         tagMeta(meta);
         itemStack.setItemMeta(meta);

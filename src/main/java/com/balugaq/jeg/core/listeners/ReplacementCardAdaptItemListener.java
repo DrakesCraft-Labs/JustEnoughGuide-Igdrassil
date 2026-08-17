@@ -70,7 +70,7 @@ public class ReplacementCardAdaptItemListener implements Listener {
     }
 
     private void sendNotice(CommandSender sender, String command) {
-        sender.sendMessage(ChatColors.color("&e[JustEnoughGuide] JustEnoughGuide 已接管 " + command + " 指令的执行。如出现 bug，请反馈至 https://github.com/balugaq/JustEnoughGuide"));
+        sender.sendMessage(ChatColors.color("&e[JustEnoughGuide] JustEnoughGuide Tomado el control " + command + " Ejecución de instrucciones. si aparece bug，Por favor envíe su opinión a https://github.com/balugaq/JustEnoughGuide"));
     }
 
     public void unbanitem(CommandSender sender, String command) {
@@ -194,7 +194,7 @@ public class ReplacementCardAdaptItemListener implements Listener {
                     unbanitem(sf2);
                     if (PaperLib.isPaper()) {
                         sender.sendMessage(Component.text().color(NamedTextColor.GREEN)
-                            .append(Component.text("[JustEnoughGuide] 已解禁配方补全伴生物品 "))
+                            .append(Component.text("[JustEnoughGuide] Fórmulas no prohibidas para completar artículos complementarios "))
                             .append(ClipboardUtil.makeComponentPaper(
                                 Component.text(sf2.getId()),
                                 sf2.getId()
@@ -202,7 +202,7 @@ public class ReplacementCardAdaptItemListener implements Listener {
                             .append(Component.text(".")
                             ));
                     } else {
-                        sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] 已解禁配方补全伴生物品 " + sf2.getId() + "."));
+                        sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] Fórmulas no prohibidas para completar artículos complementarios " + sf2.getId() + "."));
                     }
                     count++;
                 }
@@ -210,16 +210,16 @@ public class ReplacementCardAdaptItemListener implements Listener {
         }
 
         if (count != 0) {
-            sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] 已解禁 " + count + " 个配方补全伴生物品."));
+            sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] Desbloqueado " + count + " Las recetas complementan los artículos complementarios.."));
         } else {
             if (items != null) {
-                sender.sendMessage(ChatColors.color("&c[JustEnoughGuide] " + items.size() + " 个配方补全伴生物品均已是解禁状态."));
+                sender.sendMessage(ChatColors.color("&c[JustEnoughGuide] " + items.size() + " Se ha desbloqueado cada elemento complementario completado con la fórmula.."));
             }
         }
 
         if (!item.isDisabled()) {
             if (PaperLib.isPaper()) {
-                sender.sendMessage(Component.text().color(NamedTextColor.GREEN).append(Component.text("[JustEnoughGuide] 物品 "))
+                sender.sendMessage(Component.text().color(NamedTextColor.GREEN).append(Component.text("[JustEnoughGuide] cosa "))
                     .append(ClipboardUtil.makeComponentPaper(
                         Component.text(item.getItemName()),
                         ChatColor.stripColor(item.getItemName())
@@ -228,15 +228,15 @@ public class ReplacementCardAdaptItemListener implements Listener {
                         Component.text(" (" + item.getId() + ") "),
                         item.getId()
                     ))
-                    .append(Component.text(" 已是解禁状态."))
+                    .append(Component.text(" Ya en estado desbloqueado."))
                 );
             } else {
-                sender.sendMessage(ChatColors.color("&c[JustEnoughGuide] 物品 " + formattedName + " 已是解禁状态."));
+                sender.sendMessage(ChatColors.color("&c[JustEnoughGuide] cosa " + formattedName + " Ya en estado desbloqueado."));
             }
         } else {
             unbanitem(item);
             if (PaperLib.isPaper()) {
-                sender.sendMessage(Component.text().color(NamedTextColor.GREEN).append(Component.text("[JustEnoughGuide] 已解禁物品 "))
+                sender.sendMessage(Component.text().color(NamedTextColor.GREEN).append(Component.text("[JustEnoughGuide] Artículos no prohibidos "))
                     .append(ClipboardUtil.makeComponentPaper(
                         Component.text(item.getItemName()),
                         ChatColor.stripColor(item.getItemName())
@@ -248,7 +248,7 @@ public class ReplacementCardAdaptItemListener implements Listener {
                     .append(Component.text("."))
                 );
             } else {
-                sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] 已解禁物品 " + formattedName + "."));
+                sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] Artículos no prohibidos " + formattedName + "."));
             }
         }
     }
@@ -264,7 +264,7 @@ public class ReplacementCardAdaptItemListener implements Listener {
                     banitem(sf2);
                     if (PaperLib.isPaper()) {
                         sender.sendMessage(Component.text().color(NamedTextColor.GREEN)
-                            .append(Component.text("[JustEnoughGuide] 已禁用配方补全伴生物品 "))
+                            .append(Component.text("[JustEnoughGuide] Elementos complementarios para completar recetas deshabilitados "))
                             .append(ClipboardUtil.makeComponentPaper(
                                 Component.text(sf2.getId()),
                                 sf2.getId()
@@ -272,7 +272,7 @@ public class ReplacementCardAdaptItemListener implements Listener {
                             .append(Component.text("."))
                         );
                     } else {
-                        sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] 已禁用配方补全伴生物品 " + sf2.getId() + "."));
+                        sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] Elementos complementarios para completar recetas deshabilitados " + sf2.getId() + "."));
                     }
                     count++;
                 }
@@ -280,16 +280,16 @@ public class ReplacementCardAdaptItemListener implements Listener {
         }
 
         if (count != 0) {
-            sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] 已禁用 " + count + " 个配方补全伴生物品."));
+            sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] Desactivado " + count + " Las recetas complementan los artículos complementarios.."));
         } else {
             if (items != null) {
-                sender.sendMessage(ChatColors.color("&c[JustEnoughGuide] " + items.size() + " 个配方补全伴生物品均已是禁用状态."));
+                sender.sendMessage(ChatColors.color("&c[JustEnoughGuide] " + items.size() + " Todos los elementos complementarios de finalización de fórmulas están deshabilitados.."));
             }
         }
 
         if (item.isDisabled()) {
             if (PaperLib.isPaper()) {
-                sender.sendMessage(Component.text().color(NamedTextColor.RED).append(Component.text("[JustEnoughGuide] 物品 "))
+                sender.sendMessage(Component.text().color(NamedTextColor.RED).append(Component.text("[JustEnoughGuide] cosa "))
                     .append(ClipboardUtil.makeComponentPaper(
                         Component.text(item.getItemName()),
                         ChatColor.stripColor(item.getItemName())
@@ -298,15 +298,15 @@ public class ReplacementCardAdaptItemListener implements Listener {
                         Component.text(" (" + item.getId() + ") "),
                         item.getId()
                     ))
-                    .append(Component.text(" 已经是禁用状态."))
+                    .append(Component.text(" Ya discapacitado."))
                 );
             } else {
-                sender.sendMessage(ChatColors.color("&c[JustEnoughGuide] 物品 " + formattedName + " 已经是禁用状态."));
+                sender.sendMessage(ChatColors.color("&c[JustEnoughGuide] cosa " + formattedName + " Ya discapacitado."));
             }
         } else {
             banitem(item);
             if (PaperLib.isPaper()) {
-                sender.sendMessage(Component.text().color(NamedTextColor.GREEN).append(Component.text("[JustEnoughGuide] 已禁用物品 "))
+                sender.sendMessage(Component.text().color(NamedTextColor.GREEN).append(Component.text("[JustEnoughGuide] Artículos deshabilitados "))
                     .append(ClipboardUtil.makeComponentPaper(
                         Component.text(item.getItemName()),
                         ChatColor.stripColor(item.getItemName())
@@ -318,7 +318,7 @@ public class ReplacementCardAdaptItemListener implements Listener {
                     .append(Component.text("."))
                 );
             } else {
-                sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] 已禁用物品 " + formattedName + "."));
+                sender.sendMessage(ChatColors.color("&a[JustEnoughGuide] Artículos deshabilitados " + formattedName + "."));
             }
         }
     }

@@ -72,9 +72,9 @@ public class FireworksOption implements PrioritySlimefunGuideOption<Boolean> {
         if (cfgManager.isResearchingEnabled() && cfgManager.isResearchFireworkEnabled()) {
             boolean enabled = this.getSelectedOption(p, guide).orElse(true);
             ItemStack item = new CustomItemStack(
-                Material.FIREWORK_ROCKET, "&b烟花特效: &" + (enabled ? "a启用" : "4禁用"),
-                "", "&7你现在可以选择是否", "&7在解锁一个新物品的时候", "&7展示烟花特效.", "",
-                "&7⇨ &e点击 " + (enabled ? "禁用" : "启用") + " 烟花特效"
+                Material.FIREWORK_ROCKET, "&bEfectos especiales de fuegos artificiales.: &" + (enabled ? "apermitir" : "4Desactivar"),
+                "", "&7Ahora puedes elegir si", "&7Al desbloquear un nuevo elemento", "&7Mostrar efectos especiales de fuegos artificiales..", "",
+                "&7⇨ &eHacer clic " + (enabled ? "Desactivar" : "permitir") + " Efectos especiales de fuegos artificiales."
             );
             var meta = item.getItemMeta();
             meta.addItemFlags(JEGVersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP);

@@ -54,13 +54,13 @@ public class ShareInGuideOption extends AbstractBooleanGuideOption {
                 Material.WRITTEN_BOOK,
                 meta -> meta.addItemFlags(JEGVersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP)
             ),
-            "&b接收分享的物品: &" + (enabled ? "a启用" : "4禁用"),
+            "&bRecibir artículos compartidos: &" + (enabled ? "apermitir" : "4Desactivar"),
             "",
-            "&7你现在可以选择",
-            "&7当他人分享一个物品时",
-            "&7是否接收那个玩家发送的推送消息",
+            "&7Puedes elegir ahora",
+            "&7Cuando otros comparten un elemento",
+            "&7Si recibir mensajes push enviados por ese jugador",
             "",
-            "&7\u21E8 &e点击 " + (enabled ? "禁用" : "启用") + " 接收分享的物品"
+            "&7\u21E8 &eHacer clic " + (enabled ? "Desactivar" : "permitir") + " Recibir artículos compartidos"
         );
     }
 }

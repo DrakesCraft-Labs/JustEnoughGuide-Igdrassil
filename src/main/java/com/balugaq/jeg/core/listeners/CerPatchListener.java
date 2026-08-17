@@ -67,7 +67,7 @@ public class CerPatchListener implements ItemPatchListener {
             List<String> lore = meta.getLore();
             if (lore == null) lore = new ArrayList<>();
             lore.add("");
-            lore.add(ChatColors.color("&a机器性价比: " + CERRecipeGroup.FORMAT.format(cer)));
+            lore.add(ChatColors.color("&aRendimiento del costo de la máquina: " + CERRecipeGroup.FORMAT.format(cer)));
             meta.setLore(lore);
             tagMeta(meta);
             is.setItemMeta(meta);

@@ -78,7 +78,7 @@ public class Formats {
         Set<String> keys = configuration.getKeys(false);
         for (String key : keys) {
             if (key.length() > 1) {
-                JustEnoughGuide.getInstance().getLogger().warning(FILE_NAME + " 中发现无效的 Icon 自定义字符: " + key);
+                JustEnoughGuide.getInstance().getLogger().warning(FILE_NAME + " No válido encontrado en Icon Personajes personalizados: " + key);
                 continue;
             }
 

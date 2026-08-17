@@ -73,16 +73,16 @@ public class NoticeMissingMaterialGuideOption implements PrioritySlimefunGuideOp
         boolean enabled = getSelectedOption(p, guide).orElse(false);
         ItemStack item = Converter.getItem(
             isEnabled(p) ? Material.EMERALD_BLOCK : Material.REDSTONE_BLOCK,
-            "&b告知缺失的材料: &" + (enabled ? "a启用" : "4禁用"),
+            "&bNotificar materiales faltantes: &" + (enabled ? "apermitir" : "4Desactivar"),
             "",
-            "&7你现在可以选择",
-            "&7当你使用配方补全时",
-            "&7如果材料不足",
-            "&7是否告知缺失的材料",
-            "&e&l此功能为实验性功能，谨慎使用",
-            "&c&l此功能容易误报",
+            "&7Puedes elegir ahora",
+            "&7Cuando usas la finalización de recetas",
+            "&7Si no hay material suficiente",
+            "&7Si informar sobre materiales faltantes",
+            "&e&lEsta característica es experimental, utilícela con precaución.",
+            "&c&lEsta función es propensa a falsas alarmas.",
             "",
-            "&7\u21E8 &e点击 " + (enabled ? "禁用" : "启用") + " 告知缺失的材料"
+            "&7\u21E8 &eHacer clic " + (enabled ? "Desactivar" : "permitir") + " Notificar materiales faltantes"
         );
         return Optional.of(item);
     }

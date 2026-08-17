@@ -54,9 +54,9 @@ public class MultiBlockBuilderItem extends JEGSlimefunItem implements NotPlaceab
                 if (!player.isOp() && player.getGameMode() != GameMode.CREATIVE) {
                     e.getItem().setAmount(e.getItem().getAmount() - 1);
                 }
-                player.sendMessage(ChatColors.color("&a多方块 " + multiBlock.getSlimefunItem().getItemName() + " 搭建成功！"));
+                player.sendMessage(ChatColors.color("&amúltiples bloques " + multiBlock.getSlimefunItem().getItemName() + " Construido con éxito！"));
             } else {
-                player.sendMessage(ChatColors.color("&c多方块 " + multiBlock.getSlimefunItem().getItemName() + " 搭建失败！"));
+                player.sendMessage(ChatColors.color("&cmúltiples bloques " + multiBlock.getSlimefunItem().getItemName() + " Error de compilación！"));
             }
         }));
     }

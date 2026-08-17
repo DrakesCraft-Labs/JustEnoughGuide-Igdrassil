@@ -56,7 +56,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @NullMarked
 public class JEGGuideGroup extends ClassicGuideGroup {
     public static final ItemStack HEADER = Converter.getItem(
-        Material.BEACON, "&bJEG 使用指南", "&b作者: 大香蕉", "&bJEG 优化了粘液科技的指南，使其更人性化。", "&b查看以下指南书以快速上手 JEG 增加的功能。");
+        Material.BEACON, "&bJEG Guía del usuario", "&bautor: plátano grande", "&bJEG Se optimizó la guía de tecnología de limo para hacerla más fácil de usar.。", "&bConsulte las siguientes guías para comenzar rápidamente JEG funcionalidad agregada。");
     public static final int[] GUIDE_SLOTS =
         Formats.helper.getChars('h').stream().mapToInt(i -> i).toArray();
 
@@ -87,12 +87,12 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             JustEnoughGuide.getConfigManager().isPinyinSearch(),
             () -> addGuide(
                 GUIDE_SLOTS[index.getAndIncrement()],
-                Converter.getItem(Material.CLOCK, "&b功能: 拼音搜索", "&b介绍: 你可以通过拼音搜索指南来快速找到你想要的物品。", "&b点击尝试功能。"),
+                Converter.getItem(Material.CLOCK, "&bFunción: búsqueda pinyin", "&bintroducir: Puede encontrar rápidamente los elementos que desee a través de la guía de búsqueda de Pinyin。", "&bHaga clic para probar la función。"),
                 (p, s, i, a) -> {
                     try {
                         p.performCommand("sf search ding");
                     } catch (Exception e) {
-                        p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                        p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                         Debug.trace(e);
                     }
                     return false;
@@ -102,12 +102,12 @@ public class JEGGuideGroup extends ClassicGuideGroup {
 
         addGuide(
             GUIDE_SLOTS[index.getAndIncrement()],
-            Converter.getItem(Material.NAME_TAG, "&b功能: 搜索翻页", "&b介绍: 你可以在搜索中翻页来浏览更多搜索结果。", "&b点击尝试功能。"),
+            Converter.getItem(Material.NAME_TAG, "&bFunción: Pasar página de búsqueda", "&bintroducir: Puedes desplazarte por los resultados de búsqueda para ver más resultados.。", "&bHaga clic para probar la función。"),
             (p, s, i, a) -> {
                 try {
                     p.performCommand("sf search a");
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -120,29 +120,29 @@ public class JEGGuideGroup extends ClassicGuideGroup {
                 GUIDE_SLOTS[index.getAndIncrement()],
                 Converter.getItem(
                     Material.BOOK,
-                    "&b功能: 标记物品",
-                    "&b介绍: 你可以打开一个物品组，对于支持的附属。",
-                    "&b      你可以点击物品组界面下方的“书”图标以进入标记状态。",
-                    "&a      点击返回按钮以退出标记状态。",
-                    "&b点击尝试功能。"
+                    "&bFunción: marcar elementos",
+                    "&bintroducir: Puede abrir un grupo de artículos para archivos adjuntos admitidos。",
+                    "&b      Puede hacer clic en la interfaz del grupo de artículos a continuación“Libro”icono para ingresar al estado marcado。",
+                    "&a      Haga clic en el botón Atrás para salir del estado marcado.。",
+                    "&bHaga clic para probar la función。"
                 ),
                 (p, s, i, a) -> {
                     try {
                         if (Slimefun.instance() == null) {
-                            p.sendMessage("§c无法获取 Slimefun 实例，无法使用此功能。");
+                            p.sendMessage("§cNo se puede obtener Slimefun Por ejemplo, esta característica no se puede utilizar。");
                         }
 
                         SlimefunGuideImplementation guide =
                             GuideUtil.getGuide(p, SlimefunGuideMode.SURVIVAL_MODE);
 
                         if (!(guide instanceof JEGSlimefunGuideImplementation jegGuide)) {
-                            p.sendMessage("§c功能未启用，无法使用此功能。");
+                            p.sendMessage("§cLa función no está habilitada y no se puede utilizar。");
                             return false;
                         }
 
                         PlayerProfile profile = PlayerProfile.find(p).orElse(null);
                         if (profile == null) {
-                            p.sendMessage("§c无法获取玩家资料，请检查是否正确安装 Slimefun。");
+                            p.sendMessage("§cNo se puede obtener información del reproductor, verifique si está instalado correctamente. Slimefun。");
                             return false;
                         }
 
@@ -156,7 +156,7 @@ public class JEGGuideGroup extends ClassicGuideGroup {
                             }
                         }
                     } catch (Exception e) {
-                        p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                        p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                         Debug.trace(e);
                     }
                     return false;
@@ -170,34 +170,34 @@ public class JEGGuideGroup extends ClassicGuideGroup {
                 GUIDE_SLOTS[index.getAndIncrement()],
                 Converter.getItem(
                     Material.NETHER_STAR,
-                    "&b功能: 查阅标记物品",
-                    "&b介绍: 你可以查看你标记过的物品。",
-                    "&b      你可以点击物品组界面下方的“下界之星”图标以查看标记过的物品。",
-                    "&a      点击返回按钮以退出查看状态。",
-                    "&b点击尝试功能。"
+                    "&bFunción: Ver elementos etiquetados",
+                    "&bintroducir: Puedes ver los elementos que has etiquetado。",
+                    "&b      Puede hacer clic en la interfaz del grupo de artículos a continuación“estrella inferior”icono para ver elementos etiquetados。",
+                    "&a      Haga clic en el botón Atrás para salir del estado de visualización.。",
+                    "&bHaga clic para probar la función。"
                 ),
                 (p, s, i, a) -> {
                     try {
                         if (Slimefun.instance() == null) {
-                            p.sendMessage("§c无法获取 Slimefun 实例，无法使用此功能。");
+                            p.sendMessage("§cNo se puede obtener Slimefun Por ejemplo, esta característica no se puede utilizar。");
                         }
 
                         SlimefunGuideImplementation guide =
                             GuideUtil.getGuide(p, SlimefunGuideMode.SURVIVAL_MODE);
                         if (!(guide instanceof JEGSlimefunGuideImplementation jegGuide)) {
-                            p.sendMessage("§c功能未启用，无法使用此功能。");
+                            p.sendMessage("§cLa función no está habilitada y no se puede utilizar。");
                             return false;
                         }
 
                         PlayerProfile profile = PlayerProfile.find(p).orElse(null);
                         if (profile == null) {
-                            p.sendMessage("§c无法获取玩家资料，请检查是否正确安装 Slimefun。");
+                            p.sendMessage("§cNo se puede obtener información del reproductor, verifique si está instalado correctamente. Slimefun。");
                             return false;
                         }
 
                         jegGuide.openBookMarkGroup(p, profile);
                     } catch (Exception e) {
-                        p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                        p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                         Debug.trace(e);
                     }
                     return false;
@@ -209,44 +209,44 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.CRAFTING_TABLE,
-                "&b功能: 跳转物品组",
-                "&b介绍: 当你在查阅一个物品的配方时，你可以快速跳转到所需物品所属的物品组。",
-                "&b      你可以 Shift + 左键 点击所需物品，以快速跳转到该物品所属的物品组。",
-                "&b点击尝试功能。"
+                "&bFunción: Saltar grupo de elementos",
+                "&bintroducir: Cuando busca la receta de un artículo, puede saltar rápidamente al grupo de artículos al que pertenece el artículo deseado.。",
+                "&b      puede Shift + Haga clic izquierdo en el elemento deseado para saltar rápidamente al grupo de elementos al que pertenece el elemento.。",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
                     if (Slimefun.instance() == null) {
-                        p.sendMessage("§c无法获取 Slimefun 实例，无法使用此功能。");
+                        p.sendMessage("§cNo se puede obtener Slimefun Por ejemplo, esta característica no se puede utilizar。");
                         return false;
                     }
 
                     SlimefunGuideImplementation guide = GuideUtil.getGuide(p, SlimefunGuideMode.SURVIVAL_MODE);
                     if (!(guide instanceof JEGSlimefunGuideImplementation jegGuide)) {
-                        p.sendMessage("§c功能未启用，无法使用此功能。");
+                        p.sendMessage("§cLa función no está habilitada y no se puede utilizar。");
                         return false;
                     }
 
                     PlayerProfile profile = PlayerProfile.find(p).orElse(null);
                     if (profile == null) {
-                        p.sendMessage("§c无法获取玩家资料，请检查是否正确安装 Slimefun。");
+                        p.sendMessage("§cNo se puede obtener información del reproductor, verifique si está instalado correctamente. Slimefun。");
                         return false;
                     }
 
                     SlimefunItem exampleItem = SlimefunItems.ELECTRIC_DUST_WASHER_3.getItem();
                     if (exampleItem == null) {
-                        p.sendMessage("§c无法获取示例物品，请检查是否正确安装 Slimefun。");
+                        p.sendMessage("§cNo se puede obtener el artículo de muestra, verifique si está instalado correctamente Slimefun。");
                         return false;
                     }
 
                     if (exampleItem.isDisabledIn(p.getWorld())) {
-                        p.sendMessage("§c该物品已被禁用，无法展示示例");
+                        p.sendMessage("§cEste elemento ha sido deshabilitado y no se pueden mostrar ejemplos.");
                         return false;
                     }
 
                     jegGuide.displayItem(profile, exampleItem, true);
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -257,49 +257,49 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.NAME_TAG,
-                "&b功能: 快速搜索",
-                "&b介绍: 当你在查阅一个物品的配方时，你可以快速搜索物品、材料、配方类型的名字",
-                "&b      你可以 Shift + 右键 点击所需物品，你可以快速搜索物品、材料、配方类型的名字",
-                "&b点击尝试功能。"
+                "&bFunción: búsqueda rápida",
+                "&bintroducir: Cuando busca la receta de un artículo, puede buscar rápidamente el nombre del artículo, el material y el tipo de receta.",
+                "&b      puede Shift + Haga clic derecho en el elemento deseado y podrá buscar rápidamente los nombres de los elementos, materiales y tipos de recetas.",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
                     if (Slimefun.instance() == null) {
-                        p.sendMessage("§c无法获取 Slimefun 实例，无法使用此功能。");
+                        p.sendMessage("§cNo se puede obtener Slimefun Por ejemplo, esta característica no se puede utilizar。");
                         return false;
                     }
 
                     SlimefunGuideImplementation guide = GuideUtil.getGuide(p, SlimefunGuideMode.SURVIVAL_MODE);
                     if (!(guide instanceof JEGSlimefunGuideImplementation jegGuide)) {
-                        p.sendMessage("§c功能未启用，无法使用此功能。");
+                        p.sendMessage("§cLa función no está habilitada y no se puede utilizar。");
                         return false;
                     }
 
                     PlayerProfile profile = PlayerProfile.find(p).orElse(null);
                     if (profile == null) {
-                        p.sendMessage("§c无法获取玩家资料，请检查是否正确安装 Slimefun。");
+                        p.sendMessage("§cNo se puede obtener información del reproductor, verifique si está instalado correctamente. Slimefun。");
                         return false;
                     }
 
                     if (!BeginnersGuideOption.instance().isEnabled(p)) {
-                        p.sendMessage("§c此功能需要您在设置中启用新手指引。");
+                        p.sendMessage("§cEsta función requiere que habilites la incorporación en la configuración。");
                         return false;
                     }
 
                     SlimefunItem exampleItem = SlimefunItems.ELECTRIC_DUST_WASHER_3.getItem();
                     if (exampleItem == null) {
-                        p.sendMessage("§c无法获取示例物品，请检查是否正确安装 Slimefun。");
+                        p.sendMessage("§cNo se puede obtener el artículo de muestra, verifique si está instalado correctamente Slimefun。");
                         return false;
                     }
 
                     if (exampleItem.isDisabledIn(p.getWorld())) {
-                        p.sendMessage("§c该物品已被禁用，无法展示示例");
+                        p.sendMessage("§cEste elemento ha sido deshabilitado y no se pueden mostrar ejemplos.");
                         return false;
                     }
 
                     jegGuide.displayItem(profile, exampleItem, true);
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -312,44 +312,44 @@ public class JEGGuideGroup extends ClassicGuideGroup {
                 GUIDE_SLOTS[index.getAndIncrement()],
                 Converter.getItem(
                     Material.ENCHANTED_BOOK,
-                    "&b功能: 便携研究",
-                    "&b介绍: 你可以当你在查看物品的配方时，如果有未解锁的物品，可以点击以快速解锁。",
-                    "&b点击尝试功能。"
+                    "&bFunción: Investigación portátil",
+                    "&bintroducir: Cuando estás viendo la receta de un artículo, si hay un artículo que no ha sido desbloqueado, puedes hacer clic para desbloquearlo rápidamente.。",
+                    "&bHaga clic para probar la función。"
                 ),
                 (p, s, i, a) -> {
                     try {
                         if (Slimefun.instance() == null) {
-                            p.sendMessage("§c无法获取 Slimefun 实例，无法使用此功能。");
+                            p.sendMessage("§cNo se puede obtener Slimefun Por ejemplo, esta característica no se puede utilizar。");
                             return false;
                         }
 
                         SlimefunGuideImplementation guide =
                             GuideUtil.getGuide(p, SlimefunGuideMode.SURVIVAL_MODE);
                         if (!(guide instanceof JEGSlimefunGuideImplementation jegGuide)) {
-                            p.sendMessage("§c功能未启用，无法使用此功能。");
+                            p.sendMessage("§cLa función no está habilitada y no se puede utilizar。");
                             return false;
                         }
 
                         PlayerProfile profile = PlayerProfile.find(p).orElse(null);
                         if (profile == null) {
-                            p.sendMessage("§c无法获取玩家资料，请检查是否正确安装 Slimefun。");
+                            p.sendMessage("§cNo se puede obtener información del reproductor, verifique si está instalado correctamente. Slimefun。");
                             return false;
                         }
 
                         SlimefunItem exampleItem = SlimefunItems.ELECTRIC_DUST_WASHER_3.getItem();
                         if (exampleItem == null) {
-                            p.sendMessage("§c无法获取示例物品，请检查是否正确安装 Slimefun。");
+                            p.sendMessage("§cNo se puede obtener el artículo de muestra, verifique si está instalado correctamente Slimefun。");
                             return false;
                         }
 
                         if (exampleItem.isDisabledIn(p.getWorld())) {
-                            p.sendMessage("§c该物品已被禁用，无法展示示例");
+                            p.sendMessage("§cEste elemento ha sido deshabilitado y no se pueden mostrar ejemplos.");
                             return false;
                         }
 
                         jegGuide.displayItem(profile, exampleItem, true);
                     } catch (Exception e) {
-                        p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                        p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                         Debug.trace(e);
                     }
                     return false;
@@ -361,16 +361,16 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.COMPARATOR,
-                "&b功能: 智能搜索",
-                "&b介绍: 当你使用搜索时，会自动搜索相关的机器，并添加到显示列表中",
-                "&c     不支持拼音搜索。",
-                "&b点击尝试功能。"
+                "&bFunción: búsqueda inteligente",
+                "&bintroducir: Cuando utiliza la búsqueda, las máquinas relacionadas se buscan automáticamente y se agregan a la lista de visualización.",
+                "&c     La búsqueda Pinyin no es compatible。",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
-                    p.performCommand("sf search 硫酸盐");
+                    p.performCommand("sf search Sulfato");
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -382,18 +382,18 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.LODESTONE,
-                "&b功能: 搜索拓展",
-                "&b介绍: 你可以通过在开头或末尾添加 " + flag_recipe_item_name + "<recipe_item_name> 来指定搜索范围",
-                "&b      例如: " + FilterType.BY_RECIPE_ITEM_NAME.apply("电池") + " 附加搜索 配方使用的物品的名字包含 \"电池\" 的物品",
-                "&c      不支持拼音搜索。",
-                "&c      附加搜索会组合生效",
-                "&b点击尝试功能。"
+                "&bFunción: Ampliación de búsqueda",
+                "&bintroducir: Puedes hacer esto agregando al principio o al final " + flag_recipe_item_name + "<recipe_item_name> para especificar el alcance de la búsqueda",
+                "&b      Por ejemplo: " + FilterType.BY_RECIPE_ITEM_NAME.apply("Batería") + " Búsquedas adicionales de recetas utilizando elementos cuyos nombres contienen \"Batería\" elementos",
+                "&c      La búsqueda Pinyin no es compatible。",
+                "&c      Las búsquedas adicionales se combinarán para que surtan efecto.",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
-                    p.performCommand("sf search " + FilterType.BY_RECIPE_ITEM_NAME.apply("电池"));
+                    p.performCommand("sf search " + FilterType.BY_RECIPE_ITEM_NAME.apply("Batería"));
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -405,18 +405,18 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.LODESTONE,
-                "&b功能: 搜索拓展",
-                "&b介绍: 你可以在开头或末尾添加 " + flag_recipe_type_name + "<recipe_type_name> 来指定搜索范围",
-                "&b      例如: " + FilterType.BY_RECIPE_TYPE_NAME.apply("工作台") + " 附加搜索 配方类型名称包含 \"工作台\" 的物品",
-                "&c      不支持拼音搜索。",
-                "&c      附加搜索会组合生效",
-                "&b点击尝试功能。"
+                "&bFunción: Ampliación de búsqueda",
+                "&bintroducir: Puedes agregar al principio o al final. " + flag_recipe_type_name + "<recipe_type_name> para especificar el alcance de la búsqueda",
+                "&b      Por ejemplo: " + FilterType.BY_RECIPE_TYPE_NAME.apply("banco de trabajo") + " Búsquedas adicionales de nombres de tipos de recetas que contengan \"banco de trabajo\" elementos",
+                "&c      La búsqueda Pinyin no es compatible。",
+                "&c      Las búsquedas adicionales se combinarán para que surtan efecto.",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
-                    p.performCommand("sf search " + FilterType.BY_RECIPE_TYPE_NAME.apply("工作台"));
+                    p.performCommand("sf search " + FilterType.BY_RECIPE_TYPE_NAME.apply("banco de trabajo"));
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -428,18 +428,18 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.LODESTONE,
-                "&b功能: 搜索拓展",
-                "&b介绍: 你可以在开头或末尾添加 " + flag_display_item_name + "<display_item_name> 来指定搜索范围",
-                "&b      例如: " + FilterType.BY_DISPLAY_ITEM_NAME.apply("铜粉") + " 附加搜索 配方展示涉及的物品的名字包含 \"铜粉\" 的物品",
-                "&c      不支持拼音搜索。",
-                "&c      附加搜索会组合生效",
-                "&b点击尝试功能。"
+                "&bFunción: Ampliación de búsqueda",
+                "&bintroducir: Puedes agregar al principio o al final. " + flag_display_item_name + "<display_item_name> para especificar el alcance de la búsqueda",
+                "&b      Por ejemplo: " + FilterType.BY_DISPLAY_ITEM_NAME.apply("polvo de cobre") + " Búsqueda adicional Los nombres de los elementos involucrados en la visualización de recetas incluyen \"polvo de cobre\" elementos",
+                "&c      La búsqueda Pinyin no es compatible。",
+                "&c      Las búsquedas adicionales se combinarán para que surtan efecto.",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
-                    p.performCommand("sf search " + FilterType.BY_DISPLAY_ITEM_NAME.apply("铜粉"));
+                    p.performCommand("sf search " + FilterType.BY_DISPLAY_ITEM_NAME.apply("polvo de cobre"));
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -451,18 +451,18 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.LODESTONE,
-                "&b功能: 搜索拓展",
-                "&b介绍: 你可以在开头或末尾添加 " + flag_addon_name + "<addon_name> 来指定搜索范围",
-                "&b      例如: " + FilterType.BY_ADDON_NAME.apply("粘液科技") + " 附加搜索 附属名称包含 \"粘液科技\" 的物品",
-                "&c      不支持拼音搜索。",
-                "&c      附加搜索会组合生效",
-                "&b点击尝试功能。"
+                "&bFunción: Ampliación de búsqueda",
+                "&bintroducir: Puedes agregar al principio o al final. " + flag_addon_name + "<addon_name> para especificar el alcance de la búsqueda",
+                "&b      Por ejemplo: " + FilterType.BY_ADDON_NAME.apply("Tecnología de limo") + " Las búsquedas adicionales de nombres de afiliados incluyen \"Tecnología de limo\" elementos",
+                "&c      La búsqueda Pinyin no es compatible。",
+                "&c      Las búsquedas adicionales se combinarán para que surtan efecto.",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
-                    p.performCommand("sf search " + FilterType.BY_ADDON_NAME.apply("粘液科技"));
+                    p.performCommand("sf search " + FilterType.BY_ADDON_NAME.apply("Tecnología de limo"));
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -474,18 +474,18 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.LODESTONE,
-                "&b功能: 搜索拓展",
-                "&b介绍: 你可以在开头或末尾添加 " + flag_item_name + "<item_name> 来指定搜索范围",
-                "&b      例如: " + FilterType.BY_ITEM_NAME.apply("电池") + " 附加搜索 物品名称包含 \"电池\" 的物品",
-                "&b      支持拼音搜索。",
-                "&c      附加搜索会组合生效",
-                "&b点击尝试功能。"
+                "&bFunción: Ampliación de búsqueda",
+                "&bintroducir: Puedes agregar al principio o al final. " + flag_item_name + "<item_name> para especificar el alcance de la búsqueda",
+                "&b      Por ejemplo: " + FilterType.BY_ITEM_NAME.apply("Batería") + " Las búsquedas adicionales de nombres de artículos incluyen \"Batería\" elementos",
+                "&b      Soporte de búsqueda pinyin。",
+                "&c      Las búsquedas adicionales se combinarán para que surtan efecto.",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
-                    p.performCommand("sf search " + FilterType.BY_ITEM_NAME.apply("电池"));
+                    p.performCommand("sf search " + FilterType.BY_ITEM_NAME.apply("Batería"));
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -497,18 +497,18 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.LODESTONE,
-                "&b功能: 搜索拓展",
-                "&b介绍: 你可以在开头或末尾添加 " + flag_item_lore + "<item_lore> 来指定搜索范围",
-                "&b      例如: " + FilterType.BY_ITEM_LORE.apply("胡萝卜") + " 附加搜索 物品描述包含 \"胡萝卜\" 的物品",
-                "&b      支持拼音搜索。",
-                "&c      附加搜索会组合生效",
-                "&b点击尝试功能。"
+                "&bFunción: Ampliación de búsqueda",
+                "&bintroducir: Puedes agregar al principio o al final. " + flag_item_lore + "<item_lore> para especificar el alcance de la búsqueda",
+                "&b      Por ejemplo: " + FilterType.BY_ITEM_LORE.apply("zanahoria") + " Búsquedas adicionales La descripción del artículo contiene \"zanahoria\" elementos",
+                "&b      Soporte de búsqueda pinyin。",
+                "&c      Las búsquedas adicionales se combinarán para que surtan efecto.",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
-                    p.performCommand("sf search " + FilterType.BY_ITEM_LORE.apply("胡萝卜"));
+                    p.performCommand("sf search " + FilterType.BY_ITEM_LORE.apply("zanahoria"));
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -520,18 +520,18 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.LODESTONE,
-                "&b功能: 搜索拓展",
-                "&b介绍: 你可以在开头或末尾添加 " + flag_material_name + "<material_name> 来指定搜索范围",
-                "&b      例如: " + FilterType.BY_MATERIAL_NAME.apply("iron") + " 附加搜索 物品材质名称包含 \"iron\" 的物品",
-                "&c      不支持拼音搜索。",
-                "&c      附加搜索会组合生效",
-                "&b点击尝试功能。"
+                "&bFunción: Ampliación de búsqueda",
+                "&bintroducir: Puedes agregar al principio o al final. " + flag_material_name + "<material_name> para especificar el alcance de la búsqueda",
+                "&b      Por ejemplo: " + FilterType.BY_MATERIAL_NAME.apply("iron") + " Búsqueda adicional El nombre del material del artículo contiene \"iron\" elementos",
+                "&c      La búsqueda Pinyin no es compatible。",
+                "&c      Las búsquedas adicionales se combinarán para que surtan efecto.",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
                     p.performCommand("sf search " + FilterType.BY_MATERIAL_NAME.apply("iron"));
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -543,18 +543,18 @@ public class JEGGuideGroup extends ClassicGuideGroup {
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
                 Material.LODESTONE,
-                "&b功能: 搜索拓展",
-                "&b介绍: 你可以在开头或末尾添加 " + flag_full_name + "<item_name> 来指定搜索范围",
-                "&b      例如: " + FilterType.BY_MATERIAL_NAME.apply("铝锭") + " 附加搜索 名字完全为 \"铝锭\" 的物品",
-                "&c      不支持拼音搜索。",
-                "&c      附加搜索会组合生效",
-                "&b点击尝试功能。"
+                "&bFunción: Ampliación de búsqueda",
+                "&bintroducir: Puedes agregar al principio o al final. " + flag_full_name + "<item_name> para especificar el alcance de la búsqueda",
+                "&b      Por ejemplo: " + FilterType.BY_MATERIAL_NAME.apply("lingote de aluminio") + " Búsquedas adicionales de nombres exactamente \"lingote de aluminio\" elementos",
+                "&c      La búsqueda Pinyin no es compatible。",
+                "&c      Las búsquedas adicionales se combinarán para que surtan efecto.",
+                "&bHaga clic para probar la función。"
             ),
             (p, s, i, a) -> {
                 try {
-                    p.performCommand("sf search " + FilterType.BY_MATERIAL_NAME.apply("铝锭"));
+                    p.performCommand("sf search " + FilterType.BY_MATERIAL_NAME.apply("lingote de aluminio"));
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;
@@ -564,45 +564,45 @@ public class JEGGuideGroup extends ClassicGuideGroup {
         addGuide(
             GUIDE_SLOTS[index.getAndIncrement()],
             Converter.getItem(
-                Material.STONE_PICKAXE, "&b功能: 名称打印", "&b介绍: 你可以在任意物品上按 Q 键，以将此物品分享给其他玩家", "&b点击尝试功能"),
+                Material.STONE_PICKAXE, "&bFunción: Impresión de nombre", "&bintroducir: Puedes hacer clic en cualquier elemento. Q Botón para compartir este elemento con otros jugadores.", "&bHaga clic para probar la función"),
             (p, s, i, a) -> {
                 try {
                     if (Slimefun.instance() == null) {
-                        p.sendMessage("§c无法获取 Slimefun 实例，无法使用此功能。");
+                        p.sendMessage("§cNo se puede obtener Slimefun Por ejemplo, esta característica no se puede utilizar。");
                         return false;
                     }
 
                     SlimefunGuideImplementation guide = GuideUtil.getGuide(p, SlimefunGuideMode.SURVIVAL_MODE);
                     if (!(guide instanceof JEGSlimefunGuideImplementation jegGuide)) {
-                        p.sendMessage("§c功能未启用，无法使用此功能。");
+                        p.sendMessage("§cLa función no está habilitada y no se puede utilizar。");
                         return false;
                     }
 
                     PlayerProfile profile = PlayerProfile.find(p).orElse(null);
                     if (profile == null) {
-                        p.sendMessage("§c无法获取玩家资料，请检查是否正确安装 Slimefun。");
+                        p.sendMessage("§cNo se puede obtener información del reproductor, verifique si está instalado correctamente. Slimefun。");
                         return false;
                     }
 
                     if (!BeginnersGuideOption.instance().isEnabled(p)) {
-                        p.sendMessage("§c此功能需要您在设置中启用新手指引。");
+                        p.sendMessage("§cEsta función requiere que habilites la incorporación en la configuración。");
                         return false;
                     }
 
                     SlimefunItem exampleItem = SlimefunItems.ELECTRIC_DUST_WASHER_3.getItem();
                     if (exampleItem == null) {
-                        p.sendMessage("§c无法获取示例物品，请检查是否正确安装 Slimefun。");
+                        p.sendMessage("§cNo se puede obtener el artículo de muestra, verifique si está instalado correctamente Slimefun。");
                         return false;
                     }
 
                     if (exampleItem.isDisabledIn(p.getWorld())) {
-                        p.sendMessage("§c该物品已被禁用，无法展示示例");
+                        p.sendMessage("§cEste elemento ha sido deshabilitado y no se pueden mostrar ejemplos.");
                         return false;
                     }
 
                     jegGuide.displayItem(profile, exampleItem, true);
                 } catch (Exception e) {
-                    p.sendMessage("§c无法执行操作，请检查 Slimefun 是否正确安装。");
+                    p.sendMessage("§cNo se puede realizar la operación, verifique Slimefun ¿Está instalado correctamente?。");
                     Debug.trace(e);
                 }
                 return false;

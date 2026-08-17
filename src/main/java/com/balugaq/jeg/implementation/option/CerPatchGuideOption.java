@@ -46,14 +46,14 @@ public class CerPatchGuideOption extends AbstractBooleanGuideOption {
     public ItemStack getDisplayItem(Player p, ItemStack guide, boolean enabled) {
         return Converter.getItem(
             isEnabled(p) ? Material.EMERALD : Material.REDSTONE,
-            "&b性价比显示: &" + (enabled ? "a启用" : "4禁用"),
+            "&bVisualización de rendimiento de costos: &" + (enabled ? "apermitir" : "4Desactivar"),
             "",
-            "&7你现在可以选择是否",
-            "&7在搜索一个物品的全名的时候",
-            "&7在搜出的相关机器上显示",
-            "&7使用这个机器制作这个物品的性价比",
+            "&7Ahora puedes elegir si",
+            "&7Al buscar el nombre completo de un artículo",
+            "&7Se muestra en las máquinas relevantes encontradas.",
+            "&7Rentabilidad de utilizar esta máquina para fabricar este artículo.",
             "",
-            "&7\u21E8 &e点击 " + (enabled ? "禁用" : "启用") + " 性价比显示"
+            "&7\u21E8 &eHacer clic " + (enabled ? "Desactivar" : "permitir") + " Visualización de rendimiento de costos"
         );
     }
 

@@ -188,7 +188,7 @@ public interface OnDisplay {
                         itemGroup.getAddon(),
                         itemGroup.getItems().getFirst().getId()
                     )),
-                    ChatColors.color("&e右键以取消收藏物品组")
+                    ChatColors.color("&eHaga clic derecho para cancelar el grupo de artículos favoritos")
                 );
 
                 ItemStack icon = Converter.getItem(itemGroup.getItem(player));
@@ -481,12 +481,12 @@ public interface OnDisplay {
                     "&7" + item.getId(),
                     "&4&l" + Slimefun.getLocalization().getMessage(player, "guide.locked"),
                     "",
-                    "&a> 单击解锁",
+                    "&a> Haga clic para desbloquear",
                     "",
-                    "&7需要 &b",
+                    "&7necesidad &b",
                     VaultIntegration.isEnabled()
-                        ? String.format("%.2f", research.getCurrencyCost()) + " 游戏币"
-                        : research.getLevelCost() + " 级经验"
+                        ? String.format("%.2f", research.getCurrencyCost()) + " moneda del juego"
+                        : research.getLevelCost() + " experiencia de nivel"
                 );
 
                 ItemMeta meta = icon.getItemMeta();
@@ -579,7 +579,7 @@ public interface OnDisplay {
                         )
                         , LocalHelper.getDisplayName(itemGroup, player)
                     )),
-                    ChatColors.color("&e右键以取消收藏物品")
+                    ChatColors.color("&eHaga clic derecho para cancelar el artículo favorito")
                 );
 
                 ItemStack icon = Converter.getItem(item instanceof CustomIconDisplay cid ?
@@ -632,7 +632,7 @@ public interface OnDisplay {
                         )
                         , LocalHelper.getDisplayName(itemGroup, player)
                     )),
-                    ChatColors.color("&e左键点击以收藏物品")
+                    ChatColors.color("&eHaz clic izquierdo para recolectar artículos.")
                 );
 
                 ItemStack icon = Converter.getItem(item instanceof CustomIconDisplay cid ?

@@ -295,7 +295,7 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
         boolean isCompatible = environmentCheck();
 
         if (!isCompatible) {
-            getLogger().warning("环境不兼容！插件已被禁用！");
+            getLogger().warning("¡El medio ambiente es incompatible! El complemento ha sido deshabilitado！");
             onDisable();
             return;
         }
@@ -305,28 +305,28 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
         PlatformUtil.initialize();
         this.scheduler = TaskScheduler.create();
 
-        getLogger().info("正在加载前置...");
+        getLogger().info("Cargando prefijo...");
         loadLibraries();
 
-        getLogger().info("正在加载配置文件...");
+        getLogger().info("Cargando archivo de configuración...");
         saveDefaultConfig();
         this.configManager = new ConfigManager(this);
         this.configManager.load();
         Formats.load();
 
-        getLogger().info("正在注册监听器...");
+        getLogger().info("Registrar oyente...");
         this.listenerManager = new ListenerManager(this);
         this.listenerManager.load();
 
-        getLogger().info("正在注册指令");
+        getLogger().info("Instrucciones de registro");
         this.commandManager = new CommandManager(this);
         this.commandManager.load();
 
         if (!commandManager.registerCommands()) {
-            getLogger().warning("注册指令失败！");
+            getLogger().warning("El comando de registro falló！");
         }
 
-        getLogger().info("正在替换指南...");
+        getLogger().info("Reemplazo de guía...");
         Map<SlimefunGuideMode, SlimefunGuideImplementation> newGuides = new EnumMap<>(SlimefunGuideMode.class);
         newGuides.put(SlimefunGuideMode.SURVIVAL_MODE, new SurvivalGuideImplementation());
         newGuides.put(SlimefunGuideMode.CHEAT_MODE, new CheatGuideImplementation());
@@ -336,20 +336,20 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
         } catch (Exception e) {
             Debug.trace(e);
         }
-        getLogger().info("已替换生存指南");
-        getLogger().info("已替换作弊指南");
+        getLogger().info("Guía de supervivencia reemplazada");
+        getLogger().info("Guía de trucos reemplazada");
 
-        getLogger().info("正在加载书签...");
+        getLogger().info("Cargando marcadores...");
         this.bookmarkManager = new BookmarkManager(this);
         this.bookmarkManager.load();
 
-        getLogger().info("正在加载物品组...");
+        getLogger().info("Cargando conjunto de elementos...");
         GroupSetup.setup();
         JustEnoughGuide.runLaterAsync(CustomGroupConfigurations::load, 1L);
-        getLogger().info("物品组加载完毕！");
+        getLogger().info("Conjunto de elementos cargado！");
 
         if (getConfigManager().isCerPatch()) {
-            getLogger().info("已启用性价比系统");
+            getLogger().info("Sistema de rentabilidad habilitado");
             CERCalculator.load();
             ValueTable.load();
         }
@@ -370,17 +370,17 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
 
         IntegrationManager.scheduleRun(JEGGuideSettings::sortOptions);
 
-        getLogger().info("正在适配其他插件...");
+        getLogger().info("Adaptación de otros complementos...");
         this.integrationManager = new IntegrationManager(this);
         this.integrationManager.load();
 
-        getLogger().info("尝试自动更新...");
+        getLogger().info("Prueba las actualizaciones automáticas...");
         tryUpdate();
 
-        getLogger().info("正在加载 Metrics...");
+        getLogger().info("Cargando Metrics...");
         metrics = new JEGMetrics();
 
-        getLogger().info("成功启用此附属");
+        getLogger().info("Habilitado exitosamente este archivo adjunto");
     }
 
     public void unloadInternal() {
@@ -476,7 +476,7 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
 
         // Clear instance
         instance = null;
-        getLogger().info("成功禁用此附属");
+        getLogger().info("Deshabilitado exitosamente este archivo adjunto");
     }
 
     /**
@@ -497,26 +497,26 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
         this.minecraftVersion = MinecraftVersion.current();
         this.javaVersion = NumberUtils.getJavaVersion();
         if (minecraftVersion == null) {
-            getLogger().warning("无法获取到 Minecraft 版本!");
+            getLogger().warning("No se puede obtener Minecraft Versión!");
             return false;
         }
 
         if (minecraftVersion == MinecraftVersion.UNKNOWN) {
-            getLogger().warning("无法识别当前的 Minecraft 版本! (" + javaVersion + ")");
+            getLogger().warning("No se puede reconocer la corriente Minecraft Versión! (" + javaVersion + ")");
         } else if (!minecraftVersion.isAtLeast(LEAST_MC_VERSION)) {
             getLogger()
-                .warning("当前 Minecraft 版本过低(" + minecraftVersion.humanize() + "), 请使用 Minecraft "
-                    + RECOMMENDED_MC_VERSION.humanize() + " 或以上版本!");
+                .warning("actual Minecraft La versión es demasiado baja.(" + minecraftVersion.humanize() + "), Por favor use Minecraft "
+                    + RECOMMENDED_MC_VERSION.humanize() + " o superior!");
         }
 
         if (javaVersion < LEAST_JAVA_VERSION) {
-            getLogger().warning("Java 版本过低，请使用 Java " + RECOMMENDED_JAVA_VERSION + " 或以上版本!");
+            getLogger().warning("Java La versión es demasiado baja, utilice Java " + RECOMMENDED_JAVA_VERSION + " o superior!");
         }
 
         if (!Bukkit.getServer().getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
-            getLogger().log(Level.SEVERE, "本插件需要 鬼斩前置库插件(GuizhanLibPlugin) 才能运行!");
-            getLogger().log(Level.SEVERE, "从此处下载: https://50l.cc/gzlib");
-            getLogger().log(Level.SEVERE, "当出现该报错时, 作者对一切后续的报错不负责");
+            getLogger().log(Level.SEVERE, "Este complemento requiere el complemento previo a la biblioteca de Ghost Slayer(GuizhanLibPlugin) correr!");
+            getLogger().log(Level.SEVERE, "Descargar desde aquí: https://50l.cc/gzlib");
+            getLogger().log(Level.SEVERE, "Cuando ocurre este error, El autor no es responsable de posibles errores posteriores.");
             return false;
         }
 
@@ -532,7 +532,7 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
                 GuizhanUpdater.start(this, getFile(), author, repo, branch);
             }
         } catch (NoClassDefFoundError | NullPointerException | UnsupportedClassVersionError e) {
-            getLogger().info("自动更新失败: " + e.getMessage());
+            getLogger().info("Error en la actualización automática: " + e.getMessage());
             Debug.trace(e);
         }
     }
@@ -562,7 +562,7 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
         LibraryManager libraryManager = new BukkitLibraryManager(this);
         libraryManager.addMavenCentral();
 
-        getLogger().info("正在加载 Pinyin");
+        getLogger().info("Cargando Pinyin");
         Library pinyin = Library.builder()
             .groupId("com{}github{}houbb")
             .artifactId("pinyin")
@@ -570,7 +570,7 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
             .build();
         libraryManager.loadLibrary(pinyin);
 
-        getLogger().info("正在加载 opencc4j");
+        getLogger().info("Cargando opencc4j");
         Library opencc4j = Library.builder()
             .groupId("com{}github{}houbb")
             .artifactId("opencc4j")
@@ -578,7 +578,7 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
             .build();
         libraryManager.loadLibrary(opencc4j);
 
-        getLogger().info("正在加载 heaven");
+        getLogger().info("Cargando heaven");
         Library heaven = Library.builder()
             .groupId("com{}github{}houbb")
             .artifactId("heaven")
@@ -586,7 +586,7 @@ public class JustEnoughGuide extends JavaPlugin implements SlimefunAddon {
             .build();
         libraryManager.loadLibrary(heaven);
 
-        getLogger().info("正在加载 nlp-common");
+        getLogger().info("Cargando nlp-common");
         Library nlp = Library.builder()
             .groupId("com{}github{}houbb")
             .artifactId("nlp-common")

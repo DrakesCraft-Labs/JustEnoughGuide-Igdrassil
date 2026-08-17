@@ -60,7 +60,7 @@ public class MultiBlockBuilder {
                         "JEG_MULTI_BLOCK_BUILDER_ITEM_" + sf.getId(),
                         Converter.getItem(
                             sf.getItem(),
-                            "&a" + sf.getItemName() + "建造器"
+                            "&a" + sf.getItemName() + "constructor"
                         )
                     ),
                     RecipeType.NULL,

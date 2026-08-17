@@ -54,7 +54,7 @@ public enum FilterType {
         Flag.prefix("!!"),
         SearchGroup::isFullNameApplicable
     ),
-    BY_RECIPE_ITEM_NAME(Set.of(Flag.prefix("#"), Flag.suffix("能做")), (player, item, filterValue, pinyin) -> {
+    BY_RECIPE_ITEM_NAME(Set.of(Flag.prefix("#"), Flag.suffix("puede hacer")), (player, item, filterValue, pinyin) -> {
         ItemStack[] recipe = item.getRecipe();
         if (recipe == null) {
             return false;
@@ -76,7 +76,7 @@ public enum FilterType {
 
         return SearchGroup.isSearchFilterApplicable(recipeTypeIcon, filterValue, false);
     }),
-    BY_DISPLAY_ITEM_NAME(Set.of(Flag.prefix("%"), Flag.suffix("能产")), (player, item, filterValue, pinyin) -> {
+    BY_DISPLAY_ITEM_NAME(Set.of(Flag.prefix("%"), Flag.suffix("Capaz de producir")), (player, item, filterValue, pinyin) -> {
         // ignore pinyin here, since it lags much more if pinyin is applied.
 
         // Use the pre-built name cache populated during SearchGroup.init().

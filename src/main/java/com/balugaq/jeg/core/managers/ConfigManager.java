@@ -104,11 +104,11 @@ public class ConfigManager extends AbstractManager {
         this.PINYIN_SEARCH = cfg.getBoolean("improvements.pinyin-search", true);
         this.BOOKMARK = cfg.getBoolean("improvements.bookmark", true);
         this.SURVIVAL_GUIDE_TITLE = cfg
-            .getString("guide.survival-guide-title", "&2&lSlimefun 指南 (生存模式)         &e&l爱来自 JustEnoughGuide");
+            .getString("guide.survival-guide-title", "&2&lSlimefun guía (modo de supervivencia)         &e&lel amor viene de JustEnoughGuide");
         this.CHEAT_GUIDE_TITLE = cfg
-            .getString("guide.cheat-guide-title", "&c&lSlimefun 指南 (作弊模式)         &e&l爱来自 JustEnoughGuide");
-        this.SETTINGS_GUIDE_TITLE = cfg.getString("guide.settings-guide-title", "设置 & 详情");
-        this.CREDITS_GUIDE_TITLE = cfg.getString("guide.credits-guide-title", "Slimefun4 贡献者");
+            .getString("guide.cheat-guide-title", "&c&lSlimefun guía (modo trampa)         &e&lel amor viene de JustEnoughGuide");
+        this.SETTINGS_GUIDE_TITLE = cfg.getString("guide.settings-guide-title", "configuración & Detalles");
+        this.CREDITS_GUIDE_TITLE = cfg.getString("guide.credits-guide-title", "Slimefun4 Contribuyente");
         this.RTS_SEARCH = cfg.getBoolean("improvements.rts-search", true);
 
         this.BEGINNER_OPTION = cfg.getBoolean("improvements.beginner-option", true);
@@ -117,7 +117,7 @@ public class ConfigManager extends AbstractManager {
         List<String> rawBlacklist = cfg.getStringList("blacklist");
         if (rawBlacklist == null || rawBlacklist.isEmpty()) {
             this.BLACKLIST = new ArrayList<>();
-            this.BLACKLIST.add("快捷");
+            this.BLACKLIST.add("Rápido");
         } else {
             this.BLACKLIST = rawBlacklist;
         }
