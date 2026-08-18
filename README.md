@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DrakesCraft-Labs/JustEnoughGuide-Igdrassil/master/docs/banner.svg" width="100%" alt="JUSTENOUGHGUIDE Animated Banner" />
+  <img src="https://raw.githubusercontent.com/DrakesCraft-Labs/JustEnoughGuide-Igdrassil/master/banner.svg" width="100%" alt="JUSTENOUGHGUIDE Animated Banner" />
 </p>
 
 # JustEnoughGuide (JEG)
